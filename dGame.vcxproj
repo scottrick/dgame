@@ -1,0 +1,342 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{76591CAD-6CA0-4C5B-8933-00CB7E603C40}</ProjectGuid>
+    <RootNamespace>dGame</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;__DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>Full</Optimization>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="def.h" />
+    <ClInclude Include="Manager.h" />
+    <ClInclude Include="Matrix44.h" />
+    <ClInclude Include="PosQuat.h" />
+    <ClInclude Include="Quat.h" />
+    <ClInclude Include="Object.h" />
+    <ClInclude Include="ObjectManager.h" />
+    <ClInclude Include="PostProcessEffect.h" />
+    <ClInclude Include="Camera.h" />
+    <ClInclude Include="FreeCamera.h" />
+    <ClInclude Include="GameCamera.h" />
+    <ClInclude Include="Scene.h" />
+    <ClInclude Include="Unknown.h" />
+    <ClInclude Include="UnknownBucket.h" />
+    <ClInclude Include="UnknownManager.h" />
+    <ClInclude Include="Node.h" />
+    <ClInclude Include="Profile.h" />
+    <ClInclude Include="StringFunctions.h" />
+    <ClInclude Include="utility.h" />
+    <ClInclude Include="DrawBuffer.h" />
+    <ClInclude Include="GeometryData.h" />
+    <ClInclude Include="GeometryDesc.h" />
+    <ClInclude Include="Material.h" />
+    <ClInclude Include="Texture.h" />
+    <ClInclude Include="TextureManager.h" />
+    <ClInclude Include="Vertex.h" />
+    <ClInclude Include="Visual.h" />
+    <ClInclude Include="VisualManager.h" />
+    <ClInclude Include="Block.h" />
+    <ClInclude Include="File.h" />
+    <ClInclude Include="Input.h" />
+    <ClInclude Include="Event.h" />
+    <ClInclude Include="EventManager.h" />
+    <ClInclude Include="Text.h" />
+    <ClInclude Include="TextNode.h" />
+    <ClInclude Include="TextVisual.h" />
+    <ClInclude Include="UIContainer.h" />
+    <ClInclude Include="UIEffect.h" />
+    <ClInclude Include="UILabel.h" />
+    <ClInclude Include="UIObject.h" />
+    <ClInclude Include="UIScroller.h" />
+    <ClInclude Include="FragmentShader.h" />
+    <ClInclude Include="Shader.h" />
+    <ClInclude Include="ShaderManager.h" />
+    <ClInclude Include="ShaderProgram.h" />
+    <ClInclude Include="VertexShader.h" />
+    <ClInclude Include="Effect.h" />
+    <ClInclude Include="EffectManager.h" />
+    <ClInclude Include="ParticleEffect.h" />
+    <ClInclude Include="ParticleManager.h" />
+    <ClInclude Include="data.h" />
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="TestNode.h" />
+    <ClInclude Include="TestObject.h" />
+    <ClInclude Include="TestShockwaveThing.h" />
+    <ClInclude Include="TestTextureNode.h" />
+    <ClInclude Include="ComputerShip.h" />
+    <ClInclude Include="Obstacle.h" />
+    <ClInclude Include="PhysicalObject.h" />
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="PlayerShip.h" />
+    <ClInclude Include="PowerUp.h" />
+    <ClInclude Include="Projectile.h" />
+    <ClInclude Include="Sector.h" />
+    <ClInclude Include="ShipModifier.h" />
+    <ClInclude Include="Spawner.h" />
+    <ClInclude Include="AddObjectEvent.h" />
+    <ClInclude Include="RemoveObjectEvent.h" />
+    <ClInclude Include="TestFireEvent.h" />
+    <ClInclude Include="CommandSegment.h" />
+    <ClInclude Include="EngineeringSegment.h" />
+    <ClInclude Include="PropulsionSegment.h" />
+    <ClInclude Include="Segment.h" />
+    <ClInclude Include="Background.h" />
+    <ClInclude Include="BackgroundNode.h" />
+    <ClInclude Include="CollisionManager.h" />
+    <ClInclude Include="ExplosionEffect.h" />
+    <ClInclude Include="FireworkEffect.h" />
+    <ClInclude Include="GalaxyEffect.h" />
+    <ClInclude Include="Shield.h" />
+    <ClInclude Include="Shockwave.h" />
+    <ClInclude Include="SparkEffect.h" />
+    <ClInclude Include="SplashEffect.h" />
+    <ClInclude Include="TestExplosionEffect.h" />
+    <ClInclude Include="ActionScene.h" />
+    <ClInclude Include="FittingScene.h" />
+    <ClInclude Include="GalaxyScene.h" />
+    <ClInclude Include="NothingScene.h" />
+    <ClInclude Include="SplashScene.h" />
+    <ClInclude Include="Component.h" />
+    <ClInclude Include="Weapon.h" />
+    <ClInclude Include="DriftingMovementPlugin.h" />
+    <ClInclude Include="EvasiveMovementPlugin.h" />
+    <ClInclude Include="HomingMovementPlugin.h" />
+    <ClInclude Include="HumanMovementPlugin.h" />
+    <ClInclude Include="IdleMovementPlugin.h" />
+    <ClInclude Include="JumpMovementPlugin.h" />
+    <ClInclude Include="MovementPlugin.h" />
+    <ClInclude Include="ParallelMovementPlugin.h" />
+    <ClInclude Include="PatternMovementPlugin.h" />
+    <ClInclude Include="RandomMovementPlugin.h" />
+    <ClInclude Include="StationaryMovementPlugin.h" />
+    <ClInclude Include="AimedFiringPlugin.h" />
+    <ClInclude Include="BlindFiringPlugin.h" />
+    <ClInclude Include="FiringPlugin.h" />
+    <ClInclude Include="HumanFiringPlugin.h" />
+    <ClInclude Include="IdleFiringPlugin.h" />
+    <ClInclude Include="Task.h" />
+    <ClInclude Include="HomingMovementTask.h" />
+    <ClInclude Include="IdleMovementTask.h" />
+    <ClInclude Include="JumpMovementTask.h" />
+    <ClInclude Include="MovementTask.h" />
+    <ClInclude Include="MovementWaypoint.h" />
+    <ClInclude Include="StandardMovementTask.h" />
+    <ClInclude Include="AimedFiringTask.h" />
+    <ClInclude Include="BlindFiringTask.h" />
+    <ClInclude Include="FiringTask.h" />
+    <ClInclude Include="IdleFiringTask.h" />
+    <ClInclude Include="StandardMovementPlugin.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Manager.cpp" />
+    <ClCompile Include="Matrix44.cpp" />
+    <ClCompile Include="PosQuat.cpp" />
+    <ClCompile Include="Quat.cpp" />
+    <ClCompile Include="Object.cpp" />
+    <ClCompile Include="ObjectManager.cpp" />
+    <ClCompile Include="PostProcessEffect.cpp" />
+    <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="FreeCamera.cpp" />
+    <ClCompile Include="GameCamera.cpp">
+      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Level4</WarningLevel>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="Unknown.cpp" />
+    <ClCompile Include="UnknownBucket.cpp" />
+    <ClCompile Include="UnknownManager.cpp" />
+    <ClCompile Include="Node.cpp" />
+    <ClCompile Include="Profile.cpp" />
+    <ClCompile Include="StringFunctions.cpp" />
+    <ClCompile Include="DrawBuffer.cpp" />
+    <ClCompile Include="GeometryData.cpp" />
+    <ClCompile Include="GeometryDesc.cpp" />
+    <ClCompile Include="Material.cpp" />
+    <ClCompile Include="Texture.cpp" />
+    <ClCompile Include="TextureManager.cpp" />
+    <ClCompile Include="Vertex.cpp" />
+    <ClCompile Include="Visual.cpp" />
+    <ClCompile Include="VisualManager.cpp" />
+    <ClCompile Include="Block.cpp" />
+    <ClCompile Include="File.cpp" />
+    <ClCompile Include="Input.cpp" />
+    <ClCompile Include="Event.cpp" />
+    <ClCompile Include="EventManager.cpp" />
+    <ClCompile Include="Text.cpp" />
+    <ClCompile Include="TextNode.cpp" />
+    <ClCompile Include="TextVisual.cpp" />
+    <ClCompile Include="UIContainer.cpp" />
+    <ClCompile Include="UIEffect.cpp" />
+    <ClCompile Include="UILabel.cpp" />
+    <ClCompile Include="UIObject.cpp" />
+    <ClCompile Include="UIScroller.cpp" />
+    <ClCompile Include="FragmentShader.cpp" />
+    <ClCompile Include="Shader.cpp" />
+    <ClCompile Include="ShaderManager.cpp" />
+    <ClCompile Include="ShaderProgram.cpp" />
+    <ClCompile Include="VertexShader.cpp" />
+    <ClCompile Include="Effect.cpp" />
+    <ClCompile Include="EffectManager.cpp" />
+    <ClCompile Include="ParticleEffect.cpp" />
+    <ClCompile Include="ParticleManager.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="TestNode.cpp" />
+    <ClCompile Include="TestObject.cpp" />
+    <ClCompile Include="TestShockwaveThing.cpp" />
+    <ClCompile Include="TestTextureNode.cpp" />
+    <ClCompile Include="ComputerShip.cpp" />
+    <ClCompile Include="Obstacle.cpp" />
+    <ClCompile Include="PhysicalObject.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="PlayerShip.cpp" />
+    <ClCompile Include="PowerUp.cpp" />
+    <ClCompile Include="Projectile.cpp" />
+    <ClCompile Include="Sector.cpp" />
+    <ClCompile Include="ShipModifier.cpp" />
+    <ClCompile Include="Spawner.cpp" />
+    <ClCompile Include="AddObjectEvent.cpp" />
+    <ClCompile Include="RemoveObjectEvent.cpp" />
+    <ClCompile Include="TestFireEvent.cpp" />
+    <ClCompile Include="CommandSegment.cpp" />
+    <ClCompile Include="EngineeringSegment.cpp" />
+    <ClCompile Include="PropulsionSegment.cpp" />
+    <ClCompile Include="Segment.cpp" />
+    <ClCompile Include="Background.cpp" />
+    <ClCompile Include="BackgroundNode.cpp" />
+    <ClCompile Include="CollisionManager.cpp" />
+    <ClCompile Include="ExplosionEffect.cpp" />
+    <ClCompile Include="FireworkEffect.cpp" />
+    <ClCompile Include="GalaxyEffect.cpp" />
+    <ClCompile Include="Shield.cpp" />
+    <ClCompile Include="Shockwave.cpp" />
+    <ClCompile Include="SparkEffect.cpp" />
+    <ClCompile Include="SplashEffect.cpp" />
+    <ClCompile Include="TestExplosionEffect.cpp" />
+    <ClCompile Include="ActionScene.cpp" />
+    <ClCompile Include="FittingScene.cpp" />
+    <ClCompile Include="GalaxyScene.cpp" />
+    <ClCompile Include="NothingScene.cpp" />
+    <ClCompile Include="SplashScene.cpp" />
+    <ClCompile Include="Component.cpp" />
+    <ClCompile Include="Weapon.cpp" />
+    <ClCompile Include="DriftingMovementPlugin.cpp" />
+    <ClCompile Include="EvasiveMovementPlugin.cpp" />
+    <ClCompile Include="HomingMovementPlugin.cpp" />
+    <ClCompile Include="HumanMovementPlugin.cpp" />
+    <ClCompile Include="IdleMovementPlugin.cpp" />
+    <ClCompile Include="JumpMovementPlugin.cpp" />
+    <ClCompile Include="ParallelMovementPlugin.cpp" />
+    <ClCompile Include="PatternMovementPlugin.cpp" />
+    <ClCompile Include="RandomMovementPlugin.cpp" />
+    <ClCompile Include="StationaryMovementPlugin.cpp" />
+    <ClCompile Include="AimedFiringPlugin.cpp" />
+    <ClCompile Include="BlindFiringPlugin.cpp" />
+    <ClCompile Include="HumanFiringPlugin.cpp" />
+    <ClCompile Include="IdleFiringPlugin.cpp" />
+    <ClCompile Include="HomingMovementTask.cpp" />
+    <ClCompile Include="IdleMovementTask.cpp" />
+    <ClCompile Include="JumpMovementTask.cpp" />
+    <ClCompile Include="MovementTask.cpp" />
+    <ClCompile Include="MovementWaypoint.cpp" />
+    <ClCompile Include="StandardMovementTask.cpp" />
+    <ClCompile Include="AimedFiringTask.cpp" />
+    <ClCompile Include="BlindFiringTask.cpp" />
+    <ClCompile Include="IdleFiringTask.cpp" />
+    <ClCompile Include="StandardMovementPlugin.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\shaders\default.vert" />
+    <None Include="data\shaders\normals.vert" />
+    <None Include="data\shaders\red_bumpy.vert" />
+    <None Include="data\shaders\texture.vert" />
+    <None Include="data\shaders\wave.vert" />
+    <None Include="data\shaders\normals.frag" />
+    <None Include="data\shaders\red_bumpy.frag" />
+    <None Include="data\shaders\texture.frag" />
+    <None Include="data\shaders\toon.frag" />
+    <None Include="data\shaders\wave.frag" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

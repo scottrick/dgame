@@ -1,0 +1,34 @@
+dGame Controls
+===============================================
+
+ --> GAME
+
+ASDW:		controls ship movement
+SPACEBAR:	fire
+
+ --> OTHER / DEBUG
+
+CTRL + D:	enables/disables debug mode
+
+CTRL + V:	changes debug mode to visuals
+CTRL + T:	changes debug mode to textures
+CTRL + U:	changes debug mode to unknowns (only available with unknown debug builds)
+
+CTRL + F:	toggles FPS/timer display
+
+'O'/'o':	toggles slow motion
+'P'/'p':	pauses game
+
+ALT + ENTER:	toggles fullscreen
+
+
+DEBUG SCENE (F10):
+This is a special fullscreen debug screen.  There are two main differences from the other scenes.  You can drag the Mouse + LEFT_CLICK to manually rotate the model / texture.  You can also use '[' and ']' to zoom in and out.  As usual, '-'/'+' are used to change through all the models.
+
+I think that's all the controls.  I will try to update this file when I change or add new controls.
+
+===============================================
+dGame created by Scott Atkins
+Visuals in the data/visuals/a_stockermans folder were created by Adam Stockermans.
+If you have questions or comments or suggestions you can reach me at atki0090@umn.edu.
+===============================================
