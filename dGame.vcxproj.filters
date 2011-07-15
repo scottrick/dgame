@@ -1,0 +1,855 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Foundation">
+      <UniqueIdentifier>{38d7c5a2-f82c-4aa9-9720-51e114b73f69}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Foundation\Math">
+      <UniqueIdentifier>{eb62b452-f262-4bdf-bebd-6343b07a6591}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Foundation\Objects">
+      <UniqueIdentifier>{93885699-c53f-414a-9e40-759809d649a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Foundation\Objects\Cameras">
+      <UniqueIdentifier>{284c174f-15e9-4c90-b165-eadefbcb8679}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Foundation\Unknowns">
+      <UniqueIdentifier>{6a827852-943f-43bc-8112-f65dd862b7ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Foundation\Unknowns\Unknown Management">
+      <UniqueIdentifier>{c01537bd-8231-46ee-84f6-14c152a15306}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Foundation\Nodes">
+      <UniqueIdentifier>{6adcd505-5a27-4669-9951-7eb3cf4a4b70}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Foundation\Utility">
+      <UniqueIdentifier>{9e54f17a-91d8-4a87-b996-dd79b255ae50}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Foundation\Render">
+      <UniqueIdentifier>{de477dd8-bb4e-419a-adf3-3312f3475347}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Foundation\I/O">
+      <UniqueIdentifier>{7dd0d0e0-4890-43ba-a718-81b6002fe8f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Foundation\Input">
+      <UniqueIdentifier>{16f51a06-48a9-4b2c-b62e-5c9358e2bf22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Foundation\Events">
+      <UniqueIdentifier>{506f3bd7-6cfe-4231-a38e-094f5ff1d953}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Foundation\Text">
+      <UniqueIdentifier>{a8517248-32be-4287-b409-3bd3a90848a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Foundation\UI">
+      <UniqueIdentifier>{ba72cef6-d39f-4b45-b933-40e3ef8a4ba6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Foundation\Shaders">
+      <UniqueIdentifier>{5f9a782c-c4b9-4299-9713-494786abff0b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Foundation\Shaders\Vertex">
+      <UniqueIdentifier>{fdefc338-3555-4e18-8bd6-3d2e3c50d4ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Foundation\Shaders\Fragment">
+      <UniqueIdentifier>{28f5e797-b024-43b0-904d-efad0b1a256b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Foundation\Effects">
+      <UniqueIdentifier>{58ac488c-8762-4f74-9407-c318de4efe62}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="dGame">
+      <UniqueIdentifier>{52085c59-39fc-4bcc-a091-eb2f57d3df6a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dGame\Test">
+      <UniqueIdentifier>{ad435bf5-e698-4359-984d-a2215ef70110}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dGame\Game Objects">
+      <UniqueIdentifier>{cddab270-4a94-4eb5-96b3-e73d088c67cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dGame\Game Objects\Events">
+      <UniqueIdentifier>{266ccf71-096e-4274-9d5f-9b92599185c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dGame\Game Objects\Events\Test">
+      <UniqueIdentifier>{62310310-71bb-4fe0-bcfb-56963f2522cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dGame\Game Objects\Segments">
+      <UniqueIdentifier>{771acdb9-f57f-45f6-8a70-25f56d3be385}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dGame\Environment">
+      <UniqueIdentifier>{0a8eb4f7-4e86-4b76-bb3e-6db9bb5b155b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dGame\Effects">
+      <UniqueIdentifier>{0dd53482-ec2a-4450-8caa-b58ee840ca88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dGame\Effects\Test">
+      <UniqueIdentifier>{8bad059d-ca5a-4bc4-b93e-cc589c1243d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dGame\Game Scenes">
+      <UniqueIdentifier>{14c065bb-857c-4f81-81ad-07cd11f76a79}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dGame\Components">
+      <UniqueIdentifier>{3f2ff8f5-1b61-477e-ba41-01c0460e3ae1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dGame\Control">
+      <UniqueIdentifier>{28153822-bc22-42ba-8d1e-06d368e8e240}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dGame\Control\ControlPlugins">
+      <UniqueIdentifier>{723b6e3a-b5b5-45c3-908e-4e517cd2301a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dGame\Control\ControlPlugins\MovementPlugins">
+      <UniqueIdentifier>{8919b28f-f2a8-47a6-b8ad-b3bcac7c3f51}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dGame\Control\ControlPlugins\FiringPlugins">
+      <UniqueIdentifier>{e6a65a22-7c29-4494-8507-d96802d936b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dGame\Control\Tasks">
+      <UniqueIdentifier>{195edd6c-1393-432b-aee5-c753c71df784}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dGame\Control\Tasks\MovementTasks">
+      <UniqueIdentifier>{9031fdac-c756-4667-b050-901c1381d2f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dGame\Control\Tasks\FiringTasks">
+      <UniqueIdentifier>{a7bd196c-3526-4188-9999-ab83932fc2aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UNUSED">
+      <UniqueIdentifier>{91920040-9485-479c-ab91-c09eb14df819}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dGame\Game Objects\Physical Objects">
+      <UniqueIdentifier>{f5e9f1d6-3797-4fea-ab7c-1e11d5a8ff8a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="def.h">
+      <Filter>Foundation</Filter>
+    </ClInclude>
+    <ClInclude Include="Manager.h">
+      <Filter>Foundation</Filter>
+    </ClInclude>
+    <ClInclude Include="Matrix44.h">
+      <Filter>Foundation\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="PosQuat.h">
+      <Filter>Foundation\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Quat.h">
+      <Filter>Foundation\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>Foundation\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectManager.h">
+      <Filter>Foundation\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="PostProcessEffect.h">
+      <Filter>Foundation\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Foundation\Objects\Cameras</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeCamera.h">
+      <Filter>Foundation\Objects\Cameras</Filter>
+    </ClInclude>
+    <ClInclude Include="GameCamera.h">
+      <Filter>Foundation\Objects\Cameras</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>Foundation\Unknowns</Filter>
+    </ClInclude>
+    <ClInclude Include="Unknown.h">
+      <Filter>Foundation\Unknowns</Filter>
+    </ClInclude>
+    <ClInclude Include="UnknownBucket.h">
+      <Filter>Foundation\Unknowns\Unknown Management</Filter>
+    </ClInclude>
+    <ClInclude Include="UnknownManager.h">
+      <Filter>Foundation\Unknowns\Unknown Management</Filter>
+    </ClInclude>
+    <ClInclude Include="Node.h">
+      <Filter>Foundation\Nodes</Filter>
+    </ClInclude>
+    <ClInclude Include="Profile.h">
+      <Filter>Foundation\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="StringFunctions.h">
+      <Filter>Foundation\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="utility.h">
+      <Filter>Foundation\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="DrawBuffer.h">
+      <Filter>Foundation\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="GeometryData.h">
+      <Filter>Foundation\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="GeometryDesc.h">
+      <Filter>Foundation\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Material.h">
+      <Filter>Foundation\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Foundation\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureManager.h">
+      <Filter>Foundation\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Vertex.h">
+      <Filter>Foundation\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Visual.h">
+      <Filter>Foundation\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="VisualManager.h">
+      <Filter>Foundation\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Block.h">
+      <Filter>Foundation\I/O</Filter>
+    </ClInclude>
+    <ClInclude Include="File.h">
+      <Filter>Foundation\I/O</Filter>
+    </ClInclude>
+    <ClInclude Include="Input.h">
+      <Filter>Foundation\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Event.h">
+      <Filter>Foundation\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="EventManager.h">
+      <Filter>Foundation\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="Text.h">
+      <Filter>Foundation\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="TextNode.h">
+      <Filter>Foundation\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="TextVisual.h">
+      <Filter>Foundation\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="UIContainer.h">
+      <Filter>Foundation\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="UIEffect.h">
+      <Filter>Foundation\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="UILabel.h">
+      <Filter>Foundation\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="UIObject.h">
+      <Filter>Foundation\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="UIScroller.h">
+      <Filter>Foundation\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="FragmentShader.h">
+      <Filter>Foundation\Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader.h">
+      <Filter>Foundation\Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderManager.h">
+      <Filter>Foundation\Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderProgram.h">
+      <Filter>Foundation\Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="VertexShader.h">
+      <Filter>Foundation\Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="Effect.h">
+      <Filter>Foundation\Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="EffectManager.h">
+      <Filter>Foundation\Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleEffect.h">
+      <Filter>Foundation\Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleManager.h">
+      <Filter>Foundation\Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="data.h">
+      <Filter>dGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>dGame</Filter>
+    </ClInclude>
+    <ClInclude Include="TestNode.h">
+      <Filter>dGame\Test</Filter>
+    </ClInclude>
+    <ClInclude Include="TestObject.h">
+      <Filter>dGame\Test</Filter>
+    </ClInclude>
+    <ClInclude Include="TestShockwaveThing.h">
+      <Filter>dGame\Test</Filter>
+    </ClInclude>
+    <ClInclude Include="TestTextureNode.h">
+      <Filter>dGame\Test</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>dGame\Game Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Sector.h">
+      <Filter>dGame\Game Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="ShipModifier.h">
+      <Filter>dGame\Game Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Spawner.h">
+      <Filter>dGame\Game Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="AddObjectEvent.h">
+      <Filter>dGame\Game Objects\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="RemoveObjectEvent.h">
+      <Filter>dGame\Game Objects\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="TestFireEvent.h">
+      <Filter>dGame\Game Objects\Events\Test</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandSegment.h">
+      <Filter>dGame\Game Objects\Segments</Filter>
+    </ClInclude>
+    <ClInclude Include="EngineeringSegment.h">
+      <Filter>dGame\Game Objects\Segments</Filter>
+    </ClInclude>
+    <ClInclude Include="PropulsionSegment.h">
+      <Filter>dGame\Game Objects\Segments</Filter>
+    </ClInclude>
+    <ClInclude Include="Segment.h">
+      <Filter>dGame\Game Objects\Segments</Filter>
+    </ClInclude>
+    <ClInclude Include="Background.h">
+      <Filter>dGame\Environment</Filter>
+    </ClInclude>
+    <ClInclude Include="BackgroundNode.h">
+      <Filter>dGame\Environment</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionManager.h">
+      <Filter>dGame\Environment</Filter>
+    </ClInclude>
+    <ClInclude Include="ExplosionEffect.h">
+      <Filter>dGame\Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="FireworkEffect.h">
+      <Filter>dGame\Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="GalaxyEffect.h">
+      <Filter>dGame\Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="Shield.h">
+      <Filter>dGame\Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="Shockwave.h">
+      <Filter>dGame\Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="SparkEffect.h">
+      <Filter>dGame\Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="SplashEffect.h">
+      <Filter>dGame\Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="TestExplosionEffect.h">
+      <Filter>dGame\Effects\Test</Filter>
+    </ClInclude>
+    <ClInclude Include="ActionScene.h">
+      <Filter>dGame\Game Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="FittingScene.h">
+      <Filter>dGame\Game Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="GalaxyScene.h">
+      <Filter>dGame\Game Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="NothingScene.h">
+      <Filter>dGame\Game Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="SplashScene.h">
+      <Filter>dGame\Game Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="Component.h">
+      <Filter>dGame\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Weapon.h">
+      <Filter>dGame\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="DriftingMovementPlugin.h">
+      <Filter>dGame\Control\ControlPlugins\MovementPlugins</Filter>
+    </ClInclude>
+    <ClInclude Include="EvasiveMovementPlugin.h">
+      <Filter>dGame\Control\ControlPlugins\MovementPlugins</Filter>
+    </ClInclude>
+    <ClInclude Include="HomingMovementPlugin.h">
+      <Filter>dGame\Control\ControlPlugins\MovementPlugins</Filter>
+    </ClInclude>
+    <ClInclude Include="HumanMovementPlugin.h">
+      <Filter>dGame\Control\ControlPlugins\MovementPlugins</Filter>
+    </ClInclude>
+    <ClInclude Include="IdleMovementPlugin.h">
+      <Filter>dGame\Control\ControlPlugins\MovementPlugins</Filter>
+    </ClInclude>
+    <ClInclude Include="JumpMovementPlugin.h">
+      <Filter>dGame\Control\ControlPlugins\MovementPlugins</Filter>
+    </ClInclude>
+    <ClInclude Include="MovementPlugin.h">
+      <Filter>dGame\Control\ControlPlugins\MovementPlugins</Filter>
+    </ClInclude>
+    <ClInclude Include="ParallelMovementPlugin.h">
+      <Filter>dGame\Control\ControlPlugins\MovementPlugins</Filter>
+    </ClInclude>
+    <ClInclude Include="PatternMovementPlugin.h">
+      <Filter>dGame\Control\ControlPlugins\MovementPlugins</Filter>
+    </ClInclude>
+    <ClInclude Include="RandomMovementPlugin.h">
+      <Filter>dGame\Control\ControlPlugins\MovementPlugins</Filter>
+    </ClInclude>
+    <ClInclude Include="StationaryMovementPlugin.h">
+      <Filter>dGame\Control\ControlPlugins\MovementPlugins</Filter>
+    </ClInclude>
+    <ClInclude Include="AimedFiringPlugin.h">
+      <Filter>dGame\Control\ControlPlugins\FiringPlugins</Filter>
+    </ClInclude>
+    <ClInclude Include="BlindFiringPlugin.h">
+      <Filter>dGame\Control\ControlPlugins\FiringPlugins</Filter>
+    </ClInclude>
+    <ClInclude Include="FiringPlugin.h">
+      <Filter>dGame\Control\ControlPlugins\FiringPlugins</Filter>
+    </ClInclude>
+    <ClInclude Include="HumanFiringPlugin.h">
+      <Filter>dGame\Control\ControlPlugins\FiringPlugins</Filter>
+    </ClInclude>
+    <ClInclude Include="IdleFiringPlugin.h">
+      <Filter>dGame\Control\ControlPlugins\FiringPlugins</Filter>
+    </ClInclude>
+    <ClInclude Include="Task.h">
+      <Filter>dGame\Control\Tasks</Filter>
+    </ClInclude>
+    <ClInclude Include="HomingMovementTask.h">
+      <Filter>dGame\Control\Tasks\MovementTasks</Filter>
+    </ClInclude>
+    <ClInclude Include="IdleMovementTask.h">
+      <Filter>dGame\Control\Tasks\MovementTasks</Filter>
+    </ClInclude>
+    <ClInclude Include="JumpMovementTask.h">
+      <Filter>dGame\Control\Tasks\MovementTasks</Filter>
+    </ClInclude>
+    <ClInclude Include="MovementTask.h">
+      <Filter>dGame\Control\Tasks\MovementTasks</Filter>
+    </ClInclude>
+    <ClInclude Include="MovementWaypoint.h">
+      <Filter>dGame\Control\Tasks\MovementTasks</Filter>
+    </ClInclude>
+    <ClInclude Include="StandardMovementTask.h">
+      <Filter>dGame\Control\Tasks\MovementTasks</Filter>
+    </ClInclude>
+    <ClInclude Include="AimedFiringTask.h">
+      <Filter>dGame\Control\Tasks\FiringTasks</Filter>
+    </ClInclude>
+    <ClInclude Include="BlindFiringTask.h">
+      <Filter>dGame\Control\Tasks\FiringTasks</Filter>
+    </ClInclude>
+    <ClInclude Include="FiringTask.h">
+      <Filter>dGame\Control\Tasks\FiringTasks</Filter>
+    </ClInclude>
+    <ClInclude Include="IdleFiringTask.h">
+      <Filter>dGame\Control\Tasks\FiringTasks</Filter>
+    </ClInclude>
+    <ClInclude Include="StandardMovementPlugin.h">
+      <Filter>UNUSED</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicalObject.h">
+      <Filter>dGame\Game Objects\Physical Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="ComputerShip.h">
+      <Filter>dGame\Game Objects\Physical Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Obstacle.h">
+      <Filter>dGame\Game Objects\Physical Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Projectile.h">
+      <Filter>dGame\Game Objects\Physical Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerShip.h">
+      <Filter>dGame\Game Objects\Physical Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="PowerUp.h">
+      <Filter>dGame\Game Objects\Physical Objects</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Manager.cpp">
+      <Filter>Foundation</Filter>
+    </ClCompile>
+    <ClCompile Include="Matrix44.cpp">
+      <Filter>Foundation\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="PosQuat.cpp">
+      <Filter>Foundation\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Quat.cpp">
+      <Filter>Foundation\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>Foundation\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectManager.cpp">
+      <Filter>Foundation\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="PostProcessEffect.cpp">
+      <Filter>Foundation\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Foundation\Objects\Cameras</Filter>
+    </ClCompile>
+    <ClCompile Include="FreeCamera.cpp">
+      <Filter>Foundation\Objects\Cameras</Filter>
+    </ClCompile>
+    <ClCompile Include="GameCamera.cpp">
+      <Filter>Foundation\Objects\Cameras</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>Foundation\Unknowns</Filter>
+    </ClCompile>
+    <ClCompile Include="Unknown.cpp">
+      <Filter>Foundation\Unknowns</Filter>
+    </ClCompile>
+    <ClCompile Include="UnknownBucket.cpp">
+      <Filter>Foundation\Unknowns\Unknown Management</Filter>
+    </ClCompile>
+    <ClCompile Include="UnknownManager.cpp">
+      <Filter>Foundation\Unknowns\Unknown Management</Filter>
+    </ClCompile>
+    <ClCompile Include="Node.cpp">
+      <Filter>Foundation\Nodes</Filter>
+    </ClCompile>
+    <ClCompile Include="Profile.cpp">
+      <Filter>Foundation\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="StringFunctions.cpp">
+      <Filter>Foundation\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="DrawBuffer.cpp">
+      <Filter>Foundation\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="GeometryData.cpp">
+      <Filter>Foundation\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="GeometryDesc.cpp">
+      <Filter>Foundation\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Material.cpp">
+      <Filter>Foundation\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>Foundation\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureManager.cpp">
+      <Filter>Foundation\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Vertex.cpp">
+      <Filter>Foundation\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Visual.cpp">
+      <Filter>Foundation\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="VisualManager.cpp">
+      <Filter>Foundation\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Block.cpp">
+      <Filter>Foundation\I/O</Filter>
+    </ClCompile>
+    <ClCompile Include="File.cpp">
+      <Filter>Foundation\I/O</Filter>
+    </ClCompile>
+    <ClCompile Include="Input.cpp">
+      <Filter>Foundation\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Event.cpp">
+      <Filter>Foundation\Events</Filter>
+    </ClCompile>
+    <ClCompile Include="EventManager.cpp">
+      <Filter>Foundation\Events</Filter>
+    </ClCompile>
+    <ClCompile Include="Text.cpp">
+      <Filter>Foundation\Text</Filter>
+    </ClCompile>
+    <ClCompile Include="TextNode.cpp">
+      <Filter>Foundation\Text</Filter>
+    </ClCompile>
+    <ClCompile Include="TextVisual.cpp">
+      <Filter>Foundation\Text</Filter>
+    </ClCompile>
+    <ClCompile Include="UIContainer.cpp">
+      <Filter>Foundation\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="UIEffect.cpp">
+      <Filter>Foundation\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="UILabel.cpp">
+      <Filter>Foundation\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="UIObject.cpp">
+      <Filter>Foundation\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="UIScroller.cpp">
+      <Filter>Foundation\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="FragmentShader.cpp">
+      <Filter>Foundation\Shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader.cpp">
+      <Filter>Foundation\Shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderManager.cpp">
+      <Filter>Foundation\Shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderProgram.cpp">
+      <Filter>Foundation\Shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="VertexShader.cpp">
+      <Filter>Foundation\Shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="Effect.cpp">
+      <Filter>Foundation\Effects</Filter>
+    </ClCompile>
+    <ClCompile Include="EffectManager.cpp">
+      <Filter>Foundation\Effects</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleEffect.cpp">
+      <Filter>Foundation\Effects</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleManager.cpp">
+      <Filter>Foundation\Effects</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>dGame</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>dGame</Filter>
+    </ClCompile>
+    <ClCompile Include="TestNode.cpp">
+      <Filter>dGame\Test</Filter>
+    </ClCompile>
+    <ClCompile Include="TestObject.cpp">
+      <Filter>dGame\Test</Filter>
+    </ClCompile>
+    <ClCompile Include="TestShockwaveThing.cpp">
+      <Filter>dGame\Test</Filter>
+    </ClCompile>
+    <ClCompile Include="TestTextureNode.cpp">
+      <Filter>dGame\Test</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>dGame\Game Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Sector.cpp">
+      <Filter>dGame\Game Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="ShipModifier.cpp">
+      <Filter>dGame\Game Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Spawner.cpp">
+      <Filter>dGame\Game Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="AddObjectEvent.cpp">
+      <Filter>dGame\Game Objects\Events</Filter>
+    </ClCompile>
+    <ClCompile Include="RemoveObjectEvent.cpp">
+      <Filter>dGame\Game Objects\Events</Filter>
+    </ClCompile>
+    <ClCompile Include="TestFireEvent.cpp">
+      <Filter>dGame\Game Objects\Events\Test</Filter>
+    </ClCompile>
+    <ClCompile Include="CommandSegment.cpp">
+      <Filter>dGame\Game Objects\Segments</Filter>
+    </ClCompile>
+    <ClCompile Include="EngineeringSegment.cpp">
+      <Filter>dGame\Game Objects\Segments</Filter>
+    </ClCompile>
+    <ClCompile Include="PropulsionSegment.cpp">
+      <Filter>dGame\Game Objects\Segments</Filter>
+    </ClCompile>
+    <ClCompile Include="Segment.cpp">
+      <Filter>dGame\Game Objects\Segments</Filter>
+    </ClCompile>
+    <ClCompile Include="Background.cpp">
+      <Filter>dGame\Environment</Filter>
+    </ClCompile>
+    <ClCompile Include="BackgroundNode.cpp">
+      <Filter>dGame\Environment</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionManager.cpp">
+      <Filter>dGame\Environment</Filter>
+    </ClCompile>
+    <ClCompile Include="ExplosionEffect.cpp">
+      <Filter>dGame\Effects</Filter>
+    </ClCompile>
+    <ClCompile Include="FireworkEffect.cpp">
+      <Filter>dGame\Effects</Filter>
+    </ClCompile>
+    <ClCompile Include="GalaxyEffect.cpp">
+      <Filter>dGame\Effects</Filter>
+    </ClCompile>
+    <ClCompile Include="Shield.cpp">
+      <Filter>dGame\Effects</Filter>
+    </ClCompile>
+    <ClCompile Include="Shockwave.cpp">
+      <Filter>dGame\Effects</Filter>
+    </ClCompile>
+    <ClCompile Include="SparkEffect.cpp">
+      <Filter>dGame\Effects</Filter>
+    </ClCompile>
+    <ClCompile Include="SplashEffect.cpp">
+      <Filter>dGame\Effects</Filter>
+    </ClCompile>
+    <ClCompile Include="TestExplosionEffect.cpp">
+      <Filter>dGame\Effects\Test</Filter>
+    </ClCompile>
+    <ClCompile Include="ActionScene.cpp">
+      <Filter>dGame\Game Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="FittingScene.cpp">
+      <Filter>dGame\Game Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="GalaxyScene.cpp">
+      <Filter>dGame\Game Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="NothingScene.cpp">
+      <Filter>dGame\Game Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="SplashScene.cpp">
+      <Filter>dGame\Game Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="Component.cpp">
+      <Filter>dGame\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Weapon.cpp">
+      <Filter>dGame\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="DriftingMovementPlugin.cpp">
+      <Filter>dGame\Control\ControlPlugins\MovementPlugins</Filter>
+    </ClCompile>
+    <ClCompile Include="EvasiveMovementPlugin.cpp">
+      <Filter>dGame\Control\ControlPlugins\MovementPlugins</Filter>
+    </ClCompile>
+    <ClCompile Include="HomingMovementPlugin.cpp">
+      <Filter>dGame\Control\ControlPlugins\MovementPlugins</Filter>
+    </ClCompile>
+    <ClCompile Include="HumanMovementPlugin.cpp">
+      <Filter>dGame\Control\ControlPlugins\MovementPlugins</Filter>
+    </ClCompile>
+    <ClCompile Include="IdleMovementPlugin.cpp">
+      <Filter>dGame\Control\ControlPlugins\MovementPlugins</Filter>
+    </ClCompile>
+    <ClCompile Include="JumpMovementPlugin.cpp">
+      <Filter>dGame\Control\ControlPlugins\MovementPlugins</Filter>
+    </ClCompile>
+    <ClCompile Include="ParallelMovementPlugin.cpp">
+      <Filter>dGame\Control\ControlPlugins\MovementPlugins</Filter>
+    </ClCompile>
+    <ClCompile Include="PatternMovementPlugin.cpp">
+      <Filter>dGame\Control\ControlPlugins\MovementPlugins</Filter>
+    </ClCompile>
+    <ClCompile Include="RandomMovementPlugin.cpp">
+      <Filter>dGame\Control\ControlPlugins\MovementPlugins</Filter>
+    </ClCompile>
+    <ClCompile Include="StationaryMovementPlugin.cpp">
+      <Filter>dGame\Control\ControlPlugins\MovementPlugins</Filter>
+    </ClCompile>
+    <ClCompile Include="AimedFiringPlugin.cpp">
+      <Filter>dGame\Control\ControlPlugins\FiringPlugins</Filter>
+    </ClCompile>
+    <ClCompile Include="BlindFiringPlugin.cpp">
+      <Filter>dGame\Control\ControlPlugins\FiringPlugins</Filter>
+    </ClCompile>
+    <ClCompile Include="HumanFiringPlugin.cpp">
+      <Filter>dGame\Control\ControlPlugins\FiringPlugins</Filter>
+    </ClCompile>
+    <ClCompile Include="IdleFiringPlugin.cpp">
+      <Filter>dGame\Control\ControlPlugins\FiringPlugins</Filter>
+    </ClCompile>
+    <ClCompile Include="HomingMovementTask.cpp">
+      <Filter>dGame\Control\Tasks\MovementTasks</Filter>
+    </ClCompile>
+    <ClCompile Include="IdleMovementTask.cpp">
+      <Filter>dGame\Control\Tasks\MovementTasks</Filter>
+    </ClCompile>
+    <ClCompile Include="JumpMovementTask.cpp">
+      <Filter>dGame\Control\Tasks\MovementTasks</Filter>
+    </ClCompile>
+    <ClCompile Include="MovementTask.cpp">
+      <Filter>dGame\Control\Tasks\MovementTasks</Filter>
+    </ClCompile>
+    <ClCompile Include="MovementWaypoint.cpp">
+      <Filter>dGame\Control\Tasks\MovementTasks</Filter>
+    </ClCompile>
+    <ClCompile Include="StandardMovementTask.cpp">
+      <Filter>dGame\Control\Tasks\MovementTasks</Filter>
+    </ClCompile>
+    <ClCompile Include="AimedFiringTask.cpp">
+      <Filter>dGame\Control\Tasks\FiringTasks</Filter>
+    </ClCompile>
+    <ClCompile Include="BlindFiringTask.cpp">
+      <Filter>dGame\Control\Tasks\FiringTasks</Filter>
+    </ClCompile>
+    <ClCompile Include="IdleFiringTask.cpp">
+      <Filter>dGame\Control\Tasks\FiringTasks</Filter>
+    </ClCompile>
+    <ClCompile Include="StandardMovementPlugin.cpp">
+      <Filter>UNUSED</Filter>
+    </ClCompile>
+    <ClCompile Include="ComputerShip.cpp">
+      <Filter>dGame\Game Objects\Physical Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Obstacle.cpp">
+      <Filter>dGame\Game Objects\Physical Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="PhysicalObject.cpp">
+      <Filter>dGame\Game Objects\Physical Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerShip.cpp">
+      <Filter>dGame\Game Objects\Physical Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="PowerUp.cpp">
+      <Filter>dGame\Game Objects\Physical Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Projectile.cpp">
+      <Filter>dGame\Game Objects\Physical Objects</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\shaders\default.vert">
+      <Filter>Foundation\Shaders\Vertex</Filter>
+    </None>
+    <None Include="data\shaders\normals.vert">
+      <Filter>Foundation\Shaders\Vertex</Filter>
+    </None>
+    <None Include="data\shaders\red_bumpy.vert">
+      <Filter>Foundation\Shaders\Vertex</Filter>
+    </None>
+    <None Include="data\shaders\texture.vert">
+      <Filter>Foundation\Shaders\Vertex</Filter>
+    </None>
+    <None Include="data\shaders\wave.vert">
+      <Filter>Foundation\Shaders\Vertex</Filter>
+    </None>
+    <None Include="data\shaders\normals.frag">
+      <Filter>Foundation\Shaders\Fragment</Filter>
+    </None>
+    <None Include="data\shaders\red_bumpy.frag">
+      <Filter>Foundation\Shaders\Fragment</Filter>
+    </None>
+    <None Include="data\shaders\texture.frag">
+      <Filter>Foundation\Shaders\Fragment</Filter>
+    </None>
+    <None Include="data\shaders\toon.frag">
+      <Filter>Foundation\Shaders\Fragment</Filter>
+    </None>
+    <None Include="data\shaders\wave.frag">
+      <Filter>Foundation\Shaders\Fragment</Filter>
+    </None>
+  </ItemGroup>
+</Project>
