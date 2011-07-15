@@ -14,7 +14,7 @@ GameCamera::~GameCamera()
 
 }
 
-void GameCamera::FromBlock(Block *pBlock)
+void GameCamera::FromBlock(Block *)
 {
 
 }
@@ -31,7 +31,7 @@ void GameCamera::Init()
 	m_PosQuat.pos.z			= vGameSize.x / fTemp;
 }
 
-void GameCamera::Refresh(const float &fDeltaTime)
+void GameCamera::Refresh(const float &)
 {
 
 }

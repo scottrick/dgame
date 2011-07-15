@@ -10,6 +10,8 @@ using namespace std;
 #define						PI											3.141592654f
 #define						GAME_FOV									60.0f
 
+#pragma warning(disable:4505) //disable the warning for unused functions
+
 static float				InvSqrt(float x);
 
 struct VECTOR2

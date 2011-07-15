@@ -280,7 +280,7 @@ void Material::LoadChunk(ifstream *pFile, int dwStart, int dwIndent)
 
 	case 0xAFFF:
 		{
-			GetMoreChunks(pFile, pFile->tellg(), ((int)pFile->tellg()) + dwChunkSize - 6, dwIndent + 2);
+			GetMoreChunks(pFile, (int)(pFile->tellg()), ((int)pFile->tellg()) + dwChunkSize - 6, dwIndent + 2);
 		}
 		break;
 
