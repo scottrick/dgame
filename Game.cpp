@@ -145,7 +145,7 @@ void Game::HandleInput(const unsigned char &key, const int &x, const int &y, con
 		}
 		else if (key == 15) //  'O' or 'o'
 		{
-			//SetManager("ObjectManager");
+			SetManager("ObjectManager");
 		}
 		else if (key  == 22) // 'V' or 'v'
 		{

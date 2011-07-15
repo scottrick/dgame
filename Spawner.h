@@ -30,7 +30,8 @@ protected:
 	~Spawner();
 
 	bool				m_bRepeating;
-	int					m_dwNumRemaining;
+	int					m_dwNumRemainingInGroup;
+	int					m_dwNumRemainingTotal;
 	float				m_fAverageDelay;
 	float				m_fCurrentDelay;
 	float				m_fDelay;

@@ -65,6 +65,11 @@ void Sector::Clear()
 	*/
 }
 
+void Sector::End()
+{
+	
+}
+
 void Sector::FromBlock(Block *pBlock)
 {
 

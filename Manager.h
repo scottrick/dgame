@@ -14,7 +14,7 @@ public:
 	virtual void						DebugInfoRender(const float &fRatio, const PosQuat &pq)	= 0;
 	virtual void						DebugScreenRender()				= 0;
 	virtual const char					*GetManagerName()				= 0;
-	virtual void						Refresh(const float &fDeltaTime)		= 0;
+	virtual void						Refresh(const float &fDeltaTime)= 0;
 	void								RenderHelpText(float fRatio);
 	virtual void						SelectNext()					= 0;
 	virtual void						SelectPrevious()				= 0;

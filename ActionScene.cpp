@@ -13,7 +13,6 @@
 #include "Manager.h"
 #include "Matrix44.h"
 #include "Node.h"
-#include "ObjectManager.h"
 #include "Obstacle.h"
 #include "Player.h"
 #include "PlayerShip.h"

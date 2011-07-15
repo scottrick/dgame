@@ -7,7 +7,6 @@
 #include "Game.h"
 #include "Manager.h"
 #include "Node.h"
-#include "ObjectManager.h"
 #include "PosQuat.h"
 #include "SplashEffect.h"
 #include "TestShockwaveThing.h"

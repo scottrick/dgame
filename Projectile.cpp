@@ -4,6 +4,7 @@
 #include "EventManager.h"
 #include "Node.h"
 #include "RemoveObjectEvent.h"
+#include "SparkEffect.h"
 #include "TestExplosionEffect.h"
 #include "Weapon.h"
 
@@ -101,35 +102,40 @@ void Projectile::Init()
 
 void Projectile::OnDeath()
 {
-	return;
+	SparkEffect *pSparkEffect = new SparkEffect(this->GetNode()->m_vScale.x, this->GetNode(), this->GetVelocity());
+	AddObjectEvent *pAddSpark = new AddObjectEvent();
+	pAddSpark->SetObject(pSparkEffect, this->GetScene());
+	gEventManager()->AddEvent(pAddSpark);
+	pAddSpark->Release();
+	pSparkEffect->Release();
 
-	//nothing on death here..
-	if (this->GetCreator()->GetPhysicalObjectType() == PhysicalObjectType::ePLAYER_SHIP)
-	{
-		Node *pNode			= new Node();
-		pNode->SetVisual("data\\visuals\\p_blue.3ds");
-		pNode->m_vScale.x	= 0.20f;
-		pNode->m_vScale.y	= 0.20f;
-		pNode->m_vScale.z	= 0.20f;
+	////nothing on death here..
+	//if (this->GetCreator()->GetPhysicalObjectType() == PhysicalObjectType::ePLAYER_SHIP)
+	//{
+	//	Node *pNode			= new Node();
+	//	pNode->SetVisual("data\\visuals\\p_blue.3ds");
+	//	pNode->m_vScale.x	= 0.20f;
+	//	pNode->m_vScale.y	= 0.20f;
+	//	pNode->m_vScale.z	= 0.20f;
 
-		for (int i = 0; i < 7; ++i)
-		{
-			Projectile *pNewProjectile = new Projectile(pNode);
-			pNewProjectile->GetNode()->m_PosQuat.pos = this->GetNode()->m_PosQuat.pos;
+	//	for (int i = 0; i < 7; ++i)
+	//	{
+	//		Projectile *pNewProjectile = new Projectile(pNode);
+	//		pNewProjectile->GetNode()->m_PosQuat.pos = this->GetNode()->m_PosQuat.pos;
 
-			pNewProjectile->SetCreator(this->GetCreator());
-			pNewProjectile->SetWeapon(this->GetWeapon());
-			pNewProjectile->SetVelocity(VECTOR3(-6.0f + 2.0f * i, -3.0f + 1.0f * i, 0.0f));
+	//		pNewProjectile->SetCreator(this->GetCreator());
+	//		pNewProjectile->SetWeapon(this->GetWeapon());
+	//		pNewProjectile->SetVelocity(VECTOR3(-6.0f + 2.0f * i, -3.0f + 1.0f * i, 0.0f));
 
-			AddObjectEvent *pAddProj = new AddObjectEvent();
-			pAddProj->SetObject(pNewProjectile, this->GetScene());
-			gEventManager()->AddEvent(pAddProj);
-			pAddProj->Release();
-			pNewProjectile->Release();
-		}
+	//		AddObjectEvent *pAddProj = new AddObjectEvent();
+	//		pAddProj->SetObject(pNewProjectile, this->GetScene());
+	//		gEventManager()->AddEvent(pAddProj);
+	//		pAddProj->Release();
+	//		pNewProjectile->Release();
+	//	}
 
-		pNode->Release();
-	}
+	//	pNode->Release();
+	//}
 }
 
 void Projectile::Refresh(const float &fDeltaTime)

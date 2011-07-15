@@ -18,6 +18,7 @@ public:
 	Sector();
 	Sector(int dwLevel);
 
+	void								End();
 	virtual void						FromBlock(Block *pBlock);
 	virtual const char					*GetClassName() const				{ return "Sector"; }
 	GalaxyEffect						*GetGalaxyEffect()					{ return m_pGalaxyEffect; }

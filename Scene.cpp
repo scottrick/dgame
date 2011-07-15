@@ -8,7 +8,6 @@
 #include "Matrix44.h"
 #include "Node.h"
 #include "Object.h"
-#include "ObjectManager.h"
 #include "ParticleManager.h"
 #include "PhysicalObject.h"
 #include "PostProcessEffect.h"
@@ -163,7 +162,6 @@ void Scene::RefreshManagers(const float &fDeltaTime)
 	gTextureManager()->Refresh(fDeltaTime);
 	gUnknownManager()->Refresh(fDeltaTime);
 	gEventManager()->Refresh(fDeltaTime);
-	gObjectManager()->Refresh(fDeltaTime);
 //	gEffectManager()->Refresh(fDeltaTime);
 	gParticleManager()->Refresh(fDeltaTime);
 }

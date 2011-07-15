@@ -5,7 +5,6 @@
 #include "Game.h"
 #include "Manager.h"
 #include "Matrix44.h"
-#include "ObjectManager.h"
 #include "ShaderManager.h"
 #include "TextureManager.h"
 #include "UnknownManager.h"

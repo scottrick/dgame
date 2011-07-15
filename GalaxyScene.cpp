@@ -9,7 +9,6 @@
 #include "Game.h"
 #include "Manager.h"
 #include "Node.h"
-#include "ObjectManager.h"
 #include "Player.h"
 #include "Sector.h"
 #include "Text.h"

@@ -1,14 +1,16 @@
 #include "Spawner.h"
 
+#include "EventManager.h"
 #include "Game.h"
 #include "Node.h"
 #include "PhysicalObject.h"
 #include "Player.h"
+#include "RemoveObjectEvent.h"
 #include "Scene.h"
 #include "Sector.h"
 #include "utility.h"
 
-Spawner::Spawner() 
+Spawner::Spawner()
 {
 	Init();
 }
@@ -19,6 +21,8 @@ Spawner::Spawner(Sector *pSector, PhysicalObject *pObject)
 
 	SetObjectToSpawn(pObject);
 	SetSector(pSector);
+
+	m_dwNumRemainingTotal = 5 + (m_pSector->GetLevel() / 2) * 25;
 }
 
 Spawner::~Spawner()
@@ -42,7 +46,7 @@ void Spawner::Init()
 
 void Spawner::Randomize()
 {
-	m_dwNumRemaining	= (GenerateRandomInt(3) + 1) * 5;
+	m_dwNumRemainingInGroup	= (GenerateRandomInt(3) + 1) * 5;
 	//m_fCurrentDelay		= GenerateRandomFloat(1.6f) + 1.0f;
 	m_fCurrentDelay		= GenerateRandomFloat(m_fAverageDelay * 0.4f) + (m_fAverageDelay * 0.8f);
 	m_fDelay			= GenerateRandomFloat(m_fAverageDelay * 0.4f) + (m_fAverageDelay * 0.8f);
@@ -57,12 +61,21 @@ void Spawner::Refresh(const float &fDeltaTime)
 		return;
 	}
 
+	if (m_dwNumRemainingTotal <= 0)
+	{ //we are done!  so remove ourselves from the scene and be done
+		RemoveObjectEvent *pEvent = new RemoveObjectEvent();
+		pEvent->SetObject(this);
+		gEventManager()->AddEvent(pEvent);
+		pEvent->Release();
+		return;
+	}
+
 	//do spawning here, if the time is right
 	m_fCurrentDelay -= fDeltaTime;
 	
 	if (m_fCurrentDelay <= 0.0f && gGame()->GetPlayer()->GetPlayerObject()->IsAlive())
 	{ //TIME TO SPAWN something...
-		if (m_dwNumRemaining > 0) 
+		if (m_dwNumRemainingInGroup > 0) 
 		{
 			PhysicalObject *pNewObject = m_pObjectToSpawn->Duplicate();
 			pNewObject->SetTarget(gGame()->GetPlayer()->GetPlayerObject());
@@ -73,7 +86,8 @@ void Spawner::Refresh(const float &fDeltaTime)
 
 			m_fCurrentDelay = m_fDelay;
 			m_fXLoc += m_fXChange;
-			m_dwNumRemaining--;
+			m_dwNumRemainingInGroup--;
+			m_dwNumRemainingTotal--;
 		}
 		else
 		{ //everything has been spawned, so set a larger delay and reset for next batch
