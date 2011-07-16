@@ -11,6 +11,7 @@ using namespace std;
 class ComputerShip;
 class GalaxyEffect;
 class Scene;
+class Spawner;
 
 class Sector : public Object
 {
@@ -25,6 +26,7 @@ public:
 	int									GetLevel() const					{ return m_dwLevel; }
 	Scene								*GetScene()							{ return m_pScene; }
 	const char							*GetSectorName() const				{ return m_sSectorName.c_str(); }
+	float								GetSectorProgressPercent() const;
 	ComputerShip						*GetShip(unsigned int dwIndex);
 
 	void								Pause();
@@ -47,6 +49,7 @@ protected:
 	int									m_dwLevel;
 	string								m_sSectorName;
 
+	list<Spawner *>						m_Spawners;
 	ComputerShip						*m_ComputerShips[NUM_SHIP_TYPES_PER_SECTOR];
 	//list<BossShip *>					m_vBossShips;   //Eventually  :P
 
@@ -55,6 +58,7 @@ protected:
 
 private:
 
+	void								ClearSpawners();
 	void								Init();
 
 };

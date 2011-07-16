@@ -13,7 +13,7 @@ class ActionScene : public Scene
 public:
 	ActionScene();
 
-	void						DrawPlayerInfo(); //kinda hacky for now..
+	void						DrawGameInfo();
 	virtual const char			*GetClassName() const				{ return "ActionScene"; }
 	Sector						*GetSector()						{ return m_pSector; }
 	virtual void				Print(int indent) const;

@@ -33,6 +33,8 @@ Sector::~Sector()
 
 void Sector::Clear()
 {	
+	ClearSpawners();
+
 	m_dwLevel			= 1; //default level
 	m_sSectorName		= "NoName";
 
@@ -65,9 +67,22 @@ void Sector::Clear()
 	*/
 }
 
+void Sector::ClearSpawners()
+{
+	list<Spawner *>::iterator spawnIter = m_Spawners.begin();
+	while (spawnIter != m_Spawners.end())
+	{
+		Spawner *pSpawner = *spawnIter;
+		pSpawner->Release();
+
+		spawnIter++;
+	}
+	m_Spawners.clear();
+}
+
 void Sector::End()
 {
-	
+	ClearSpawners();	
 }
 
 void Sector::FromBlock(Block *pBlock)
@@ -100,6 +115,24 @@ void Sector::Generate(int dwLevel)
 	//Print(0);
 }
 
+float Sector::GetSectorProgressPercent() const
+{
+	unsigned int numberRemaining = 0;
+	unsigned int numberTotal = 0;
+
+	list<Spawner *>::const_iterator iter = m_Spawners.begin();
+	while (iter != m_Spawners.end())
+	{
+		Spawner *pSpawner = *iter;
+		iter++;
+
+		numberRemaining += pSpawner->GetNumRemaining();
+		numberTotal += pSpawner->GetNumTotal();
+	}
+
+	return (float)numberRemaining / (float)numberTotal;
+}
+
 ComputerShip *Sector::GetShip(unsigned int dwIndex)
 {
 	if (dwIndex < NUM_SHIP_TYPES_PER_SECTOR)
@@ -130,13 +163,15 @@ void Sector::Pause()
 
 void Sector::Play()
 {
+	ClearSpawners(); //remove any existing spawners just in case
+
 	for (int i = 0; i < NUM_SHIP_TYPES_PER_SECTOR; ++i) 
 	{
 		Spawner *pSpawner = new Spawner(this, GetShip(i));
 		//pSpawner->SetAverageDelay(10.0f);
 		pSpawner->Randomize();
 		m_pScene->AddObject(pSpawner);
-		pSpawner->Release();
+		m_Spawners.push_back(pSpawner);
 	}
 	
 	//if (GenerateRandomInt(1)) { //50% chance for obstacles

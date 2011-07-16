@@ -22,13 +22,31 @@ Spawner::Spawner(Sector *pSector, PhysicalObject *pObject)
 	SetObjectToSpawn(pObject);
 	SetSector(pSector);
 
-	m_dwNumRemainingTotal = 5 + (m_pSector->GetLevel() / 2) * 25;
+	m_dwNumRemainingToSpawn = 50 + (m_pSector->GetLevel() / 2) * 25;
+	m_dwNumRemainingAlive = m_dwNumRemainingToSpawn;
+	m_dwNumTotal = m_dwNumRemainingToSpawn;
 }
 
 Spawner::~Spawner()
 {
+	ClearAliveObjects();
 	SetObjectToSpawn(0);
 	SetSector(0);
+}
+
+void Spawner::ClearAliveObjects()
+{
+	list<PhysicalObject *>::iterator iter = m_AliveObjects.begin();
+
+	while (iter != m_AliveObjects.end())
+	{
+		PhysicalObject *obj = *iter;
+		iter++;
+
+		obj->Release();
+	}
+
+	m_AliveObjects.clear();
 }
 
 void Spawner::FromBlock(Block *pBlock) 
@@ -39,6 +57,7 @@ void Spawner::FromBlock(Block *pBlock)
 void Spawner::Init() 
 {
 	m_bRepeating		= true;
+	m_bFinished			= false;
 	m_fAverageDelay		= 1.035f; //default delay
 	m_pObjectToSpawn	= 0;
 	m_pSector			= 0;
@@ -56,17 +75,38 @@ void Spawner::Randomize()
 
 void Spawner::Refresh(const float &fDeltaTime) 
 {
-	if (m_pSector->GetScene()->GetComputerShipCount() >= MAX_NUMBER_OF_COMPUTER_SHIPS && m_pObjectToSpawn->GetPhysicalObjectType() == PhysicalObject::eCOMPUTER_SHIP)
-	{ //don't spawn if there are too many computer ships and the object to spawn in a computer ship
-		return;
+	//check our spawned objects list and remove any that are dead
+	list<PhysicalObject *>::iterator iter = m_AliveObjects.begin();
+	while (iter != m_AliveObjects.end())
+	{
+		PhysicalObject *obj = *iter;
+		iter++;
+
+		if (!(obj->IsAlive()))
+		{
+			m_dwNumRemainingAlive--;
+			m_AliveObjects.remove(obj);
+			obj->Release();
+		}
 	}
 
-	if (m_dwNumRemainingTotal <= 0)
+	if (m_dwNumRemainingAlive <= 0)
 	{ //we are done!  so remove ourselves from the scene and be done
 		RemoveObjectEvent *pEvent = new RemoveObjectEvent();
 		pEvent->SetObject(this);
 		gEventManager()->AddEvent(pEvent);
 		pEvent->Release();
+		m_bFinished = true;
+		return;
+	}
+
+	if (m_pSector->GetScene()->GetComputerShipCount() >= MAX_NUMBER_OF_COMPUTER_SHIPS && m_pObjectToSpawn->GetPhysicalObjectType() == PhysicalObject::eCOMPUTER_SHIP)
+	{ //don't spawn if there are too many computer ships and the object to spawn in a computer ship
+		return;
+	}
+
+	if (m_dwNumRemainingToSpawn <= 0)
+	{
 		return;
 	}
 
@@ -82,12 +122,13 @@ void Spawner::Refresh(const float &fDeltaTime)
 			pNewObject->GetNode()->m_PosQuat.pos.y	= GAME_SIZE_Y / 2.0f + pNewObject->GetNode()->GetScale().x + 0.1f;
 			pNewObject->GetNode()->m_PosQuat.pos.x	= m_fXLoc;
 			m_pSector->GetScene()->AddObject(pNewObject);
-			pNewObject->Release();
+
+			m_AliveObjects.push_back(pNewObject);
 
 			m_fCurrentDelay = m_fDelay;
 			m_fXLoc += m_fXChange;
 			m_dwNumRemainingInGroup--;
-			m_dwNumRemainingTotal--;
+			m_dwNumRemainingToSpawn--;
 		}
 		else
 		{ //everything has been spawned, so set a larger delay and reset for next batch

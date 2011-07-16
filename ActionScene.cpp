@@ -38,13 +38,8 @@ ActionScene::~ActionScene()
 	SetSector(0);
 }
 
-void ActionScene::DrawPlayerInfo()
+void ActionScene::DrawGameInfo()
 {
-	if (!m_pPlayerObject)
-	{
-		return;
-	}
-
 	glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
 
 	GLboolean bTextureWasOn = glIsEnabled(GL_TEXTURE_2D);
@@ -59,7 +54,26 @@ void ActionScene::DrawPlayerInfo()
 	float fBarStartY		= 0.87f;
 	float fBarPctStruct		= m_pPlayerObject->GetStructure() / m_pPlayerObject->GetStructureMax();
 	float fBarPctShield		= m_pPlayerObject->GetShields() / m_pPlayerObject->GetShieldsMax();
+	float fBarPctProgress	= 1.0f - m_pSector->GetSectorProgressPercent();
 
+	//if they aren't actually 100% done, cap them at 99%,
+	//so it never displays 100% complete when you actually aren't done yet
+	if (fBarPctStruct < 1.0f)
+	{
+		fBarPctStruct = min(fBarPctStruct, 0.99f);
+	}
+
+	if (fBarPctShield < 1.0f)
+	{
+		fBarPctShield = min(fBarPctShield, 0.99f);
+	}
+
+	if (fBarPctProgress < 1.0f)
+	{
+		fBarPctProgress = min(fBarPctProgress, 0.99f);
+	}
+
+	//draw STRUCT outer box
 	glBegin(GL_LINE_LOOP);
 	glVertex3f(fBarStartX, fBarStartY, 0.0f);
 	glVertex3f(fBarStartX + fBarSizeX, fBarStartY, 0.0f);
@@ -67,6 +81,7 @@ void ActionScene::DrawPlayerInfo()
 	glVertex3f(fBarStartX, fBarStartY - (fBarSizeY - 0.01f), 0.0f);
 	glEnd();
 
+	//draw SHIELDS outer box
 	glBegin(GL_LINE_LOOP);
 	glVertex3f(fBarStartX, fBarStartY - fBarSizeY, 0.0f);
 	glVertex3f(fBarStartX + fBarSizeX, fBarStartY - fBarSizeY, 0.0f);
@@ -74,6 +89,15 @@ void ActionScene::DrawPlayerInfo()
 	glVertex3f(fBarStartX, fBarStartY - (fBarSizeY * 2.0f - 0.01f), 0.0f);
 	glEnd();
 
+	//draw PROGRESS outer box
+	glBegin(GL_LINE_LOOP);
+	glVertex3f(fBarStartX, fBarStartY - fBarSizeY * 2.0f, 0.0f);
+	glVertex3f(fBarStartX + fBarSizeX, fBarStartY - fBarSizeY * 2.0f, 0.0f);
+	glVertex3f(fBarStartX + fBarSizeX, fBarStartY - (fBarSizeY * 3.0 - 0.01f), 0.0f);
+	glVertex3f(fBarStartX, fBarStartY - (fBarSizeY * 3.0 - 0.01f), 0.0f);
+	glEnd();
+
+	//fill STRUCT box
 	glColor3f(0.8f, 0.0f, 0.0f);
 	glBegin(GL_QUADS);
 	glVertex3f(fBarStartX, fBarStartY, 0.0f);
@@ -82,6 +106,7 @@ void ActionScene::DrawPlayerInfo()
 	glVertex3f(fBarStartX, fBarStartY - (fBarSizeY - 0.01f), 0.0f);
 	glEnd();
 	
+	//fill SHIELDS box
 	glColor3f(0.0f, 0.0f, 0.8f);
 	glBegin(GL_QUADS);
 	glVertex3f(fBarStartX, fBarStartY - fBarSizeY, 0.0f);
@@ -89,38 +114,50 @@ void ActionScene::DrawPlayerInfo()
 	glVertex3f(fBarStartX + fBarSizeX * fBarPctShield, fBarStartY - (fBarSizeY * 2.0f - 0.01f), 0.0f);
 	glVertex3f(fBarStartX, fBarStartY - (fBarSizeY * 2.0f - 0.01f), 0.0f);
 	glEnd();
+	
+	//fill PROGRESS box
+	glColor3f(0.0, 0.8f, 0.0f);
+	glBegin(GL_QUADS);
+	glVertex3f(fBarStartX, fBarStartY - fBarSizeY * 2.0f, 0.0f);
+	glVertex3f(fBarStartX + fBarSizeX * fBarPctProgress, fBarStartY - fBarSizeY * 2.0f, 0.0f);
+	glVertex3f(fBarStartX + fBarSizeX * fBarPctProgress, fBarStartY - (fBarSizeY * 3.0f - 0.01f), 0.0f);
+	glVertex3f(fBarStartX, fBarStartY - (fBarSizeY * 3.0f - 0.01f), 0.0f);
+	glEnd();
 
 	glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
+	//glClear(GL_DEPTH_BUFFER_BIT);
 
 	//draw sector name
-	glRasterPos2f(-0.99f, 0.92f);
+	glRasterPos3f(-0.99f, 0.92f, -0.05f);
 	for (const char *c = m_pSector->GetSectorName(); *c != '\0'; c++)
 	{
 		glutBitmapCharacter(GLUT_BITMAP_8_BY_13, *c);
 	}
 
-	const size_t bufferSize = 50;
-	char killBuffer[bufferSize];
-	sprintf_s(killBuffer, bufferSize, "%d objects destroyed", m_pPlayerObject->GetNumKills());
+	const size_t size = 30;
+	char text[size];
+	float fTextStartX = -0.84f;
 
-	//draw kill count!
-	glRasterPos2f(-0.99f, 0.6f);
-	for (const char *c = killBuffer; *c != '\0'; c++)
+	//draw STRUCT string
+	glRasterPos3f(fTextStartX, fBarStartY - 0.6f * fBarSizeY, -0.05f);
+	sprintf_s(text, size, "STRUCTURE %d%%", (int)(fBarPctStruct * 100));
+	for (const char *c = text; *c != '\0'; c++)
 	{
 		glutBitmapCharacter(GLUT_BITMAP_8_BY_13, *c);
 	}
 
-	//draw # live objects
-	sprintf_s(killBuffer, bufferSize, "%d live objects", this->GetNumObjects());
-	glRasterPos2f(-0.99f, 0.52f);
-	for (const char *c = killBuffer; *c != '\0'; c++)
+	//draw SHIELDS string
+	glRasterPos3f(fTextStartX, fBarStartY - 1.6f * fBarSizeY, -0.05f);
+	sprintf_s(text, size, "SHIELDS   %d%%", (int)(fBarPctShield * 100));
+	for (const char *c = text; *c != '\0'; c++)
 	{
 		glutBitmapCharacter(GLUT_BITMAP_8_BY_13, *c);
 	}
 
-	sprintf_s(killBuffer, bufferSize, "%d post render effects", this->GetNumPostRenderEffects());
-	glRasterPos2f(-0.99f, 0.44f);
-	for (const char *c = killBuffer; *c != '\0'; c++)
+	//draw progress string
+	glRasterPos3f(fTextStartX, fBarStartY - 2.6f * fBarSizeY, -0.05f);
+	sprintf_s(text, size, "PROGRESS  %d%%", (int)(fBarPctProgress * 100));
+	for (const char *c = text; *c != '\0'; c++)
 	{
 		glutBitmapCharacter(GLUT_BITMAP_8_BY_13, *c);
 	}
@@ -223,7 +260,7 @@ void ActionScene::Render(Manager *pDebugManager)
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 	
-	DrawPlayerInfo();
+	DrawGameInfo();
 
 	if (!bPostProcessing) {
 		return;
