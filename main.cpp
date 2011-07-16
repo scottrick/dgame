@@ -83,6 +83,7 @@ int				WINDOW_Y							= 0;
 bool			DEBUG_FPS_DISPLAY					= false;
 bool			PAUSED								= false;
 bool			SLOW_MOTION							= false;
+bool			FAST_FORWARD						= false;
 bool			FULL_SCREEN							= false;
 
 char			*WINDOW_NAME						= "dGame";
@@ -263,6 +264,12 @@ void KeyboardStandardDown(unsigned char key, int x, int y)
 	else if ((key == 'o') || (key == 'O'))
 	{
 		SLOW_MOTION = !SLOW_MOTION;
+		FAST_FORWARD = false;
+	}
+	else if ((key == 'f') || (key == 'F'))
+	{
+		FAST_FORWARD = !FAST_FORWARD;
+		SLOW_MOTION = false;
 	}
 	else if ((key == 'u') || (key == 'U'))
 	{
@@ -421,6 +428,11 @@ void LoopFunction()
 		if (SLOW_MOTION)
 		{
 			DeltaTime = DeltaTime / 10;
+		}
+
+		if (FAST_FORWARD)
+		{
+			DeltaTime = DeltaTime * 4.0f;
 		}
 
 		GameTime			+= DeltaTime;
